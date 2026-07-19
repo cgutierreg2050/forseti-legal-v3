@@ -169,22 +169,7 @@ function initSimulator() {
       descContent.innerHTML = contents[cat] || contents.laboral;
     });
   });
-}`;
-  
-  const tagsContainer = document.getElementById("result-tags");
-  tagsContainer.innerHTML = "";
-  lawyer.tags.forEach(tag => {
-    const span = document.createElement("span");
-    span.className = "lawyer-tag";
-    span.textContent = tag;
-    tagsContainer.appendChild(span);
-  });
-  
-  // Swap screens
-  loaderScreen.style.display = "none";
-  resultScreen.style.display = "block";
 }
-
 // 5. Interactive Comparison Toggle
 function initComparisonToggle() {
   const traditionalToggle = document.getElementById("toggle-trad");
