@@ -150,67 +150,26 @@ function initMobileMenu() {
 // 4. Interactive Match Simulator
 function initSimulator() {
   const categoryBtns = document.querySelectorAll(".console-btn");
-  const queryInput = document.getElementById("console-input");
-  const submitBtn = document.getElementById("console-submit");
+  const descContent = document.getElementById("dynamic-desc-content");
   
-  const idleScreen = document.getElementById("sim-idle");
-  const loaderScreen = document.getElementById("sim-loader");
-  const resultScreen = document.getElementById("sim-result");
+  const contents = {
+    laboral: "<strong>Auditoría de Relaciones Obrero-Patronales:</strong> Diagnóstico estructural de contratos de trabajo, políticas internas y esquemas de compensación. Identificamos pasivos contingentes y riesgos de fricción administrativa antes de la apertura de cualquier proceso judicial.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Matriz indexada de exposición de riesgo laboral y plan correctivo.",
+    contratos: "<strong>Estructuración de Acuerdos Comerciales:</strong> Diseño técnico de contratos de distribución, franquicias, pactos de accionistas y alianzas estratégicas. Sustituimos las cláusulas ambiguas por flujos lógicos de ejecución que agilizan los cierres de negocio.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Modelos contractuales funcionales y diagramas procedimentales de ejecución.",
+    pi: "<strong>Protección de Activos Intangibles:</strong> Registro, auditoría y defensa de marcas, nombres comerciales, patentes y secretos industriales. Aseguramos la exclusividad del valor comercial de su identidad corporativa en el mercado.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Títulos de propiedad industrial certificados y bitácora de vigilancia marcaria.",
+    publico: "<strong>Estrategia Regulatoria y Defensa Administrativa:</strong> Gestión técnica de licitaciones públicas, contratos estatales y representación especializada en litigios contenciosos de alta cuantía frente a la administración pública.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Análisis predictivo de contingencia regulatoria y defensa procesal estructurada."
+  };
   
-  const statusLog = document.getElementById("sim-status-log");
-  
-  let selectedCategory = "ma"; // default
-  
+  if(!categoryBtns.length || !descContent) return;
+
   categoryBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       categoryBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      selectedCategory = btn.dataset.category;
+      const cat = btn.dataset.category;
+      descContent.innerHTML = contents[cat] || contents.laboral;
     });
   });
-  
-  submitBtn.addEventListener("click", () => {
-    const textQuery = queryInput.value.trim();
-    if (!textQuery) {
-      alert("Por favor escribe una descripción de tu necesidad legal.");
-      return;
-    }
-    
-    // Hide screens, show loader
-    idleScreen.style.display = "none";
-    resultScreen.style.display = "none";
-    loaderScreen.style.display = "flex";
-    
-    // Simulate progressive log messages
-    let logIndex = 0;
-    statusLog.textContent = SIMULATION_LOGS[logIndex];
-    
-    const logInterval = setInterval(() => {
-      logIndex++;
-      if (logIndex < SIMULATION_LOGS.length) {
-        statusLog.textContent = SIMULATION_LOGS[logIndex];
-      } else {
-        clearInterval(logInterval);
-        displayMatchResult(selectedCategory);
-      }
-    }, 600);
-  });
-}
-
-function displayMatchResult(category) {
-  const loaderScreen = document.getElementById("sim-loader");
-  const resultScreen = document.getElementById("sim-result");
-  
-  const pool = LAWYER_POOL[category] || LAWYER_POOL["ma"];
-  // Randomly pick one matching lawyer from the category pool
-  const lawyer = pool[Math.floor(Math.random() * pool.length)];
-  
-  // Update lawyer card elements
-  document.getElementById("result-avatar").src = lawyer.avatar;
-  document.getElementById("result-name").textContent = lawyer.name;
-  document.getElementById("result-role").textContent = lawyer.role;
-  document.getElementById("result-bio").textContent = lawyer.bio;
-  document.getElementById("result-score").textContent = `Match Score: ${lawyer.score}`;
+}`;
   
   const tagsContainer = document.getElementById("result-tags");
   tagsContainer.innerHTML = "";
