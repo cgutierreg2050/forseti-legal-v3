@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initHeaderScroll();
   initMobileMenu();
-  initSimulator();
   initComparisonToggle();
   initContactWizard();
   initScrollReveal();
@@ -147,29 +146,7 @@ function initMobileMenu() {
   });
 }
 
-// 4. Interactive Match Simulator
-function initSimulator() {
-  const categoryBtns = document.querySelectorAll(".console-btn");
-  const descContent = document.getElementById("dynamic-desc-content");
-  
-  const contents = {
-    laboral: "<strong>Auditoría de Relaciones Obrero-Patronales:</strong> Diagnóstico estructural de contratos de trabajo, políticas internas y esquemas de compensación. Identificamos pasivos contingentes y riesgos de fricción administrativa antes de la apertura de cualquier proceso judicial.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Matriz indexada de exposición de riesgo laboral y plan correctivo.",
-    contratos: "<strong>Estructuración de Acuerdos Comerciales:</strong> Diseño técnico de contratos de distribución, franquicias, pactos de accionistas y alianzas estratégicas. Sustituimos las cláusulas ambiguas por flujos lógicos de ejecución que agilizan los cierres de negocio.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Modelos contractuales funcionales y diagramas procedimentales de ejecución.",
-    pi: "<strong>Protección de Activos Intangibles:</strong> Registro, auditoría y defensa de marcas, nombres comerciales, patentes y secretos industriales. Aseguramos la exclusividad del valor comercial de su identidad corporativa en el mercado.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Títulos de propiedad industrial certificados y bitácora de vigilancia marcaria.",
-    publico: "<strong>Estrategia Regulatoria y Defensa Administrativa:</strong> Gestión técnica de licitaciones públicas, contratos estatales y representación especializada en litigios contenciosos de alta cuantía frente a la administración pública.<br><br><strong style='color: var(--gold-accent);'>Entregable:</strong> Análisis predictivo de contingencia regulatoria y defensa procesal estructurada."
-  };
-  
-  if(!categoryBtns.length || !descContent) return;
-
-  categoryBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      categoryBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const cat = btn.dataset.category;
-      descContent.innerHTML = contents[cat] || contents.laboral;
-    });
-  });
-}
+// Simulator code removed
 // 5. Interactive Comparison Toggle
 function initComparisonToggle() {
   const traditionalToggle = document.getElementById("toggle-trad");
