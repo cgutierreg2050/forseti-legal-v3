@@ -2,20 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Color Palette - Navy Blue & Gold Theme */
-  --navy-dark: #0b0f19; /* Darker shade for deepest backgrounds */
+  /* Color Palette - Light Theme with Navy Blue & Gold */
+  --navy-dark: #0b0f19;
   --navy-medium: #131a2c; /* Main dark blue from logo */
-  --navy-light: #1e2843; /* Lighter shade for borders/hovers */
+  --navy-light: #1e2843; 
   
-  --gold-primary: #946f24; /* Deeper gold */
+  --gold-primary: #946f24; 
   --gold-accent: #b38832; /* Primary gold from logo */
-  --gold-light: #d6b265; /* Lighter gold for highlights */
+  --gold-light: #d6b265; 
   
-  --cream-bg: var(--navy-dark);
-  --cream-card: var(--navy-medium);
-  --cream-border: var(--navy-light);
-  --cream-text: #F8FAFC; /* Crisp white-blue text */
-  --cream-text-muted: #94A3B8; /* Slate 400 for secondary text */
+  --cream-bg: #FFFFFF; /* White background as requested */
+  --cream-card: #F8FAFC; /* Very light slate for cards */
+  --cream-border: #E2E8F0; /* Light gray border */
+  --cream-text: var(--navy-medium); /* Dark Navy text on white */
+  --cream-text-muted: #475569; /* Slate 600 for secondary text */
 
   --dark-bg: var(--navy-dark); 
   --dark-card: var(--navy-medium);
@@ -42,21 +42,21 @@
   --radius-lg: 12px;
 }
 
-/* Light Theme Variables (Default is Dark now) */
+/* Light Theme Variables */
 body {
   --bg-primary: var(--cream-bg);
   --bg-card: var(--cream-card);
   --border-color: var(--cream-border);
   --text-primary: var(--cream-text);
   --text-secondary: var(--cream-text-muted);
-  --nav-bg: rgba(9, 9, 11, 0.9);
+  --nav-bg: rgba(255, 255, 255, 0.95);
   --btn-primary-bg: var(--gold-accent);
-  --btn-primary-text: var(--navy-dark);
+  --btn-primary-text: var(--white);
   --btn-secondary-bg: transparent;
-  --btn-secondary-text: var(--gold-accent);
-  --btn-secondary-border: var(--gold-accent);
-  --glass-bg: rgba(24, 24, 27, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --btn-secondary-text: var(--navy-medium);
+  --btn-secondary-border: var(--navy-medium);
+  --glass-bg: rgba(248, 250, 252, 0.8);
+  --glass-border: rgba(19, 26, 44, 0.1);
   
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -478,7 +478,8 @@ body.dark-theme .hero::after {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--navy-dark);
+  color: var(--white);
   width: 100vw;
   position: relative;
   left: 50%;
@@ -518,12 +519,12 @@ body.dark-theme .hero::after {
 }
 
 .match-console {
-  background: var(--bg-card);
-  color: var(--text-primary);
+  background: var(--navy-dark);
+  color: var(--white);
   border-radius: var(--radius-md);
   padding: 30px;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-lg), 0 10px 40px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--navy-light);
+  box-shadow: var(--shadow-lg), 0 10px 40px rgba(0, 0, 0, 0.1);
   font-family: var(--font-sans);
   transition: var(--transition-smooth);
 }
@@ -1362,13 +1363,24 @@ body.dark-theme .progress-step.active {
 
 /* Footer */
 .footer {
-  background-color: var(--bg-card);
-  color: var(--text-secondary);
+  background-color: var(--navy-dark);
+  color: var(--cream-text-muted);
   padding: 80px 0 40px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--navy-light);
   font-size: 14px;
   font-weight: 300;
   transition: var(--transition-smooth);
+}
+
+.footer .footer-title {
+  color: var(--white);
+}
+
+.footer a {
+  color: var(--cream-text-muted);
+}
+.footer a:hover {
+  color: var(--gold-accent);
 }
 
 body.dark-theme .footer {
