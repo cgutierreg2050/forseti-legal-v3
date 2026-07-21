@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderScroll();
   initMobileMenu();
   initComparisonToggle();
-  initContactWizard();
   initScrollReveal();
 });
 
@@ -176,101 +175,7 @@ function initComparisonToggle() {
   });
 }
 
-// 6. Contact Multi-Step Wizard
-function initContactWizard() {
-  const steps = document.querySelectorAll(".form-step");
-  const progressSteps = document.querySelectorAll(".progress-step");
-  const nextBtn = document.getElementById("form-next");
-  const prevBtn = document.getElementById("form-prev");
-  const submitBtn = document.getElementById("form-submit");
-  const successOverlay = document.getElementById("form-success");
-  const formContent = document.getElementById("form-wizard-content");
-  
-  if (!nextBtn || !prevBtn || steps.length === 0) return;
-  
-  let currentStep = 0;
-  
-  function updateWizard() {
-    steps.forEach((step, i) => {
-      step.classList.toggle("active", i === currentStep);
-    });
-    
-    progressSteps.forEach((pStep, i) => {
-      pStep.classList.toggle("active", i === currentStep);
-      pStep.classList.toggle("completed", i < currentStep);
-    });
-    
-    // Toggle Prev button visibility
-    prevBtn.style.display = currentStep === 0 ? "none" : "block";
-    
-    // Toggle Next/Submit button visibility
-    if (currentStep === steps.length - 1) {
-      nextBtn.style.display = "none";
-      submitBtn.style.display = "block";
-    } else {
-      nextBtn.style.display = "block";
-      submitBtn.style.display = "none";
-    }
-  }
-  
-  nextBtn.addEventListener("click", () => {
-    // Basic validation
-    const inputs = steps[currentStep].querySelectorAll("input, textarea, select");
-    let valid = true;
-    inputs.forEach(input => {
-      if (input.hasAttribute("required") && !input.value.trim()) {
-        valid = false;
-        input.style.borderColor = "red";
-      } else {
-        input.style.borderColor = "";
-      }
-    });
-    
-    if (!valid) {
-      alert("Por favor completa los campos obligatorios.");
-      return;
-    }
-    
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      updateWizard();
-    }
-  });
-  
-  prevBtn.addEventListener("click", () => {
-    if (currentStep > 0) {
-      currentStep--;
-      updateWizard();
-    }
-  });
-  
-  submitBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    // Validate final step
-    const inputs = steps[currentStep].querySelectorAll("input, textarea, select");
-    let valid = true;
-    inputs.forEach(input => {
-      if (input.hasAttribute("required") && !input.value.trim()) {
-        valid = false;
-        input.style.borderColor = "red";
-      } else {
-        input.style.borderColor = "";
-      }
-    });
-    
-    if (!valid) {
-      alert("Por favor completa los campos obligatorios.");
-      return;
-    }
-    
-    // Simulate successful form submit
-    formContent.style.display = "none";
-    successOverlay.style.display = "block";
-  });
-  
-  // Initial state setup
-  updateWizard();
-}
+// // Wizard code removed
 
 // 7. Scroll Reveal Animation using IntersectionObserver
 function initScrollReveal() {
