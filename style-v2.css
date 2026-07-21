@@ -2,26 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Color Palette - Dark Sober Theme (Graphite & Minimalist Silver) */
-  --navy-dark: #09090B; /* Zinc 950 */
-  --navy-medium: #18181B; /* Zinc 900 */
-  --navy-light: #27272A; /* Zinc 800 */
+  /* Color Palette - Navy Blue & Gold Theme */
+  --navy-dark: #0b0f19; /* Darker shade for deepest backgrounds */
+  --navy-medium: #131a2c; /* Main dark blue from logo */
+  --navy-light: #1e2843; /* Lighter shade for borders/hovers */
   
-  --gold-primary: #A1A1AA; /* Zinc 400 - Silver accent */
-  --gold-accent: #E4E4E7; /* Zinc 200 - Bright Silver */
-  --gold-light: #FAFAFA; /* Zinc 50 */
+  --gold-primary: #946f24; /* Deeper gold */
+  --gold-accent: #b38832; /* Primary gold from logo */
+  --gold-light: #d6b265; /* Lighter gold for highlights */
   
-  --cream-bg: #09090B; /* Force dark background */
-  --cream-card: #18181B;
-  --cream-border: #27272A;
-  --cream-text: #FAFAFA;
-  --cream-text-muted: #A1A1AA;
+  --cream-bg: var(--navy-dark);
+  --cream-card: var(--navy-medium);
+  --cream-border: var(--navy-light);
+  --cream-text: #F8FAFC; /* Crisp white-blue text */
+  --cream-text-muted: #94A3B8; /* Slate 400 for secondary text */
 
-  --dark-bg: #000000; /* Pure black mode for toggle */
-  --dark-card: #09090B;
-  --dark-border: #18181B;
-  --dark-text: #FAFAFA;
-  --dark-text-muted: #71717A;
+  --dark-bg: var(--navy-dark); 
+  --dark-card: var(--navy-medium);
+  --dark-border: var(--navy-light);
+  --dark-text: #F8FAFC;
+  --dark-text-muted: #94A3B8;
 
   --white: #FFFFFF;
   --black: #000000;
