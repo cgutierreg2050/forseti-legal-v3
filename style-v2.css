@@ -116,6 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0 0 1rem 0;
   font-weight: 300;
+  text-align: justify;
 }
 
 p:last-child {
@@ -1124,93 +1125,74 @@ body.dark-theme .comp-card.forseti .comp-feat-title {
   line-height: 1.5;
 }
 
-/* Testimonials / Client Voices */
-.testimonials-section {
+/* Team Section */
+.team-section {
   padding: 120px 0;
   background: rgba(11, 19, 40, 0.015);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
 
-.testi-grid {
+.team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
 @media (max-width: 900px) {
-  .testi-grid {
+  .team-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.testi-card {
+.team-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   transition: var(--transition-smooth);
 }
 
-.testi-card:hover {
+.team-card:hover {
   border-color: var(--gold-accent);
   box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
 }
 
-.testi-mark {
+.team-name {
   font-family: var(--font-serif);
-  font-size: 80px;
-  line-height: 1;
-  color: var(--gold-accent);
-  opacity: 0.15;
-  height: 30px;
-  margin-top: -20px;
-}
-
-.testi-quote {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  line-height: 1.4;
+  font-size: 22px;
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 30px;
-  font-style: italic;
+  margin-bottom: 8px;
 }
 
-.testi-author-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.testi-avatar-placeholder {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--navy-medium);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.testi-author-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.testi-author-name {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.testi-author-co {
+.team-role {
   font-size: 12px;
+  color: var(--gold-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  font-weight: 600;
+  display: block;
+}
+
+.team-summary {
+  font-weight: 600;
+  font-family: var(--font-sans);
+  margin-bottom: 16px;
+  color: var(--navy-medium);
+  font-size: 15px;
+  text-align: left;
+}
+
+.team-bio {
+  font-size: 13.5px;
   color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: justify;
 }
 
 /* Consultation Step-by-Step Form */
