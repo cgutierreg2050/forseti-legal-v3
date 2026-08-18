@@ -1128,7 +1128,7 @@ body.dark-theme .comp-card.forseti .comp-feat-title {
 /* Team Section */
 .team-section {
   padding: 120px 0;
-  background: rgba(11, 19, 40, 0.015);
+  background: var(--bg-primary);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
