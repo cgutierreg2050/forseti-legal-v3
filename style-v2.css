@@ -116,7 +116,8 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0 0 1rem 0;
   font-weight: 300;
-  text-align: justify;
+  text-align: justify !important;
+  text-justify: inter-word;
 }
 
 p:last-child {
@@ -170,6 +171,8 @@ body.dark-theme .section-title span {
   color: var(--text-secondary);
   max-width: 700px;
   margin-bottom: 48px;
+  text-align: justify !important;
+  text-justify: inter-word;
 }
 
 /* Custom Buttons */
