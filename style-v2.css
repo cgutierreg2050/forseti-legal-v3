@@ -267,6 +267,23 @@ body.dark-theme .section-title span {
   width: auto;
 }
 
+/* Theme sensitive logos */
+.logo-dark-mode {
+  display: none !important;
+}
+
+.logo-default {
+  display: block !important;
+}
+
+body.dark-theme .logo-dark-mode {
+  display: block !important;
+}
+
+body.dark-theme .logo-default {
+  display: none !important;
+}
+
 .logo-text {
   height: 20px;
   width: auto;
