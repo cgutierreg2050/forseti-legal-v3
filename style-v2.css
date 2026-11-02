@@ -409,6 +409,15 @@ body.dark-theme .hero::after {
   .hero-ctas {
     justify-content: center;
   }
+
+  .hero-proof {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-proof::before {
+    display: none;
+  }
 }
 
 .hero-content h1 {
